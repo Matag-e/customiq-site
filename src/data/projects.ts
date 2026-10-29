@@ -73,8 +73,5 @@ export const projects: readonly Project[] = [
   },
 ]
 
-/** Rótulo obrigatório exibido em todos os cards do portfólio. */
-export const projectDisclaimer = 'Projeto conceitual'
-
 /** Mensagem exibida quando o endereço da demonstração ainda não foi informado. */
 export const projectPendingLabel = 'Demonstração em breve'

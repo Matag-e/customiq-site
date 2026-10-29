@@ -1,5 +1,5 @@
 import { Button } from '../Button/Button'
-import { projectDisclaimer, projectPendingLabel, type Project } from '../../data/projects'
+import { projectPendingLabel, type Project } from '../../data/projects'
 import { ProjectVisual } from './ProjectVisual'
 import styles from './ProjectCard.module.css'
 
@@ -28,7 +28,6 @@ export function ProjectCard({
     <article className={classes} aria-labelledby={`projeto-${project.id}`}>
       <div className={styles.visualColumn}>
         <ProjectVisual project={project} variant={project.composition} />
-        <p className={styles.badge}>{projectDisclaimer}</p>
       </div>
 
       <div className={styles.body}>
