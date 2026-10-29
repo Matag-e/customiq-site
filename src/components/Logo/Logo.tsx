@@ -26,8 +26,6 @@ export function Logo({ tone = 'default', size = 'md', className }: LogoProps) {
         className={classes}
         src={site.logo.src}
         alt={site.logo.alt}
-        width={220}
-        height={48}
         decoding="async"
       />
     )

@@ -28,8 +28,8 @@ export interface SiteInfo {
   readonly url: string
   readonly logo: {
     /** Caminho do arquivo oficial do logotipo (ex.: '/images/logo/customiq.svg'). */
-    readonly src: string | null
-    readonly alt: string
+    readonly src: '/images/logo/customiq.png'
+    readonly alt: 'CustomIQ'
   }
 }
 
@@ -93,7 +93,7 @@ export const site: SiteInfo = {
   logo: {
     // Insira aqui o arquivo oficial do logotipo, ex.: '/images/logo/customiq.svg'.
     // Enquanto não houver arquivo, a marca é exibida apenas como assinatura tipográfica.
-    src: null,
+    src: '/images/logo/customiq.png',
     alt: 'CustomIQ',
   },
 }

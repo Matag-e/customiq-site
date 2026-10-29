@@ -5,18 +5,25 @@
   line-height: 1;
   color: inherit;
   white-space: nowrap;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: filter var(--dur-base) var(--ease-out);
 }
 
 .sm {
   font-size: 1rem;
+  height: 24px;
 }
 
 .md {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  height: clamp(42px, 6vw, 64px);
 }
 
 .lg {
-  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  height: clamp(56px, 8vw, 92px);
 }
 
 .default {
@@ -24,7 +31,9 @@
 }
 
 /* Sobre fundos escuros a assinatura permanece branca,
-   preservando contraste e a versão oficial da marca. */
+   preservando contraste e a versão oficial da marca.
+   Para imagens PNG escuras, aplicamos um filtro de inversão. */
 .inverse {
   color: var(--ci-white);
+  filter: invert(1) brightness(2);
 }
