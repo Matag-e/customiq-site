@@ -1,0 +1,73 @@
+.about {
+  border-bottom: var(--border);
+}
+
+.grid {
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.paragraph {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-relaxed);
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 56ch;
+}
+
+.focus {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding-top: var(--space-5);
+  border-top: var(--border);
+}
+
+.focusTitle {
+  font-size: var(--fs-micro);
+  font-weight: 500;
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--ci-gray-mid);
+}
+
+.focusList {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.focusItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: var(--space-3);
+  border-bottom: var(--border);
+  font-size: var(--fs-body);
+}
+
+.focusMark {
+  width: 5px;
+  height: 5px;
+  background-color: currentColor;
+  flex-shrink: 0;
+}
+
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  }
+
+  .focus {
+    padding-top: 0;
+    border-top: none;
+    padding-left: clamp(2rem, 4vw, 4rem);
+    border-left: var(--border);
+  }
+}

@@ -1,0 +1,30 @@
+.logo {
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: inherit;
+  white-space: nowrap;
+}
+
+.sm {
+  font-size: 1rem;
+}
+
+.md {
+  font-size: 1.25rem;
+}
+
+.lg {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.default {
+  color: currentColor;
+}
+
+/* Sobre fundos escuros a assinatura permanece branca,
+   preservando contraste e a versão oficial da marca. */
+.inverse {
+  color: var(--ci-white);
+}

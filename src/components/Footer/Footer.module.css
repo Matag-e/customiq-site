@@ -1,0 +1,122 @@
+.footer {
+  position: relative;
+  background-color: var(--ci-black);
+  color: var(--ci-white);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  --rule: rgba(255, 255, 255, 0.16);
+}
+
+.inner {
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 4rem);
+  padding-block: clamp(3rem, 7vw, 5.5rem);
+}
+
+.brandColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 34ch;
+}
+
+.description {
+  font-size: var(--fs-small);
+  line-height: var(--lh-relaxed);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.tagline {
+  font-size: var(--fs-micro);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--ci-gray-mid);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.columnTitle {
+  font-size: var(--fs-micro);
+  font-weight: 500;
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--ci-gray-mid);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.link {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  font-size: var(--fs-small);
+  color: rgba(255, 255, 255, 0.82);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.link:hover {
+  color: var(--ci-white);
+}
+
+.linkLabel {
+  font-size: var(--fs-small);
+}
+
+.linkValue {
+  font-size: var(--fs-micro);
+  color: var(--ci-gray-mid);
+  letter-spacing: 0.02em;
+}
+
+.note {
+  max-width: 30ch;
+  font-size: var(--fs-small);
+  line-height: var(--lh-relaxed);
+  color: var(--ci-gray-mid);
+}
+
+.base {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-block: var(--space-5);
+  border-top: 1px solid var(--rule);
+}
+
+.copyright {
+  font-size: var(--fs-micro);
+  letter-spacing: 0.02em;
+  color: var(--ci-gray-mid);
+}
+
+.legalList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+}
+
+.legalList .link {
+  font-size: var(--fs-micro);
+}
+
+@media (min-width: 720px) {
+  .inner {
+    grid-template-columns: 1.4fr 0.8fr 0.8fr;
+  }
+}
+
+@media (min-width: 1100px) {
+  .inner {
+    grid-template-columns: 1.6fr 1fr 1fr;
+    gap: clamp(3rem, 6vw, 7rem);
+  }
+}

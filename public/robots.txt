@@ -1,0 +1,9 @@
+# CustomIQ — robots.txt
+#
+# Substitua "https://example.com" pelo domínio oficial antes de publicar.
+# O domínio também deve ser informado em src/config/site.ts (campo `url`).
+
+User-agent: *
+Allow: /
+
+Sitemap: https://example.com/sitemap.xml

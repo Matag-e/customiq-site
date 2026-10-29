@@ -1,0 +1,197 @@
+.frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--ci-offwhite);
+}
+
+/* A imagem é exibida inteira dentro do quadro, sem ampliação nem corte.
+   O quadro mantém sempre a mesma proporção, garantindo o alinhamento da
+   grade do portfólio independentemente da proporção de cada arquivo. */
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.composition {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background-color: var(--ci-offwhite);
+  color: var(--ci-black);
+}
+
+/* Malha de referência comum às três composições */
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      to right,
+      rgba(11, 11, 11, 0.09) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(11, 11, 11, 0.09) 1px, transparent 1px);
+  background-size: 12.5% 12.5%;
+}
+
+.shapePrimary,
+.shapeSecondary,
+.shapeTertiary {
+  position: absolute;
+  display: block;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.caption {
+  position: absolute;
+  left: 1.25rem;
+  bottom: 1.25rem;
+  font-size: var(--fs-micro);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--ci-gray-mid);
+}
+
+/* --- 01 Aurora Estética: arcos concêntricos e coluna suave --- */
+.aurora .shapePrimary {
+  left: 12%;
+  top: 12%;
+  width: 46%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(11, 11, 11, 0.35);
+  border-radius: 50%;
+}
+
+.aurora .shapeSecondary {
+  left: 22%;
+  top: 22%;
+  width: 46%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(11, 11, 11, 0.18);
+  border-radius: 50%;
+}
+
+.aurora .shapeTertiary {
+  right: 8%;
+  top: 0;
+  bottom: 0;
+  width: 18%;
+  background-color: var(--ci-black);
+}
+
+/* --- 02 Vértice Arquitetura: retângulo sólido e plano inclinado --- */
+.vertice .shapePrimary {
+  left: 10%;
+  bottom: 12%;
+  width: 44%;
+  height: 58%;
+  background-color: var(--ci-black);
+}
+
+.vertice .shapeSecondary {
+  right: 12%;
+  top: 14%;
+  width: 32%;
+  height: 32%;
+  border: 1px solid rgba(11, 11, 11, 0.4);
+}
+
+.vertice .shapeTertiary {
+  left: 0;
+  right: 0;
+  bottom: 26%;
+  height: 1px;
+  background-color: rgba(11, 11, 11, 0.35);
+}
+
+/* --- 03 Atlas Performance: barras diagonais de energia e moldura de meta --- */
+.atlas .shapePrimary {
+  left: -14%;
+  top: 36%;
+  width: 130%;
+  height: 15%;
+  background-color: var(--ci-black);
+  transform: rotate(-12deg);
+  transform-origin: center;
+}
+
+.atlas .shapeSecondary {
+  left: -14%;
+  top: 12%;
+  width: 130%;
+  height: 16%;
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(11, 11, 11, 0.45) 0 3px,
+    transparent 3px 16px
+  );
+  transform: rotate(-12deg);
+  transform-origin: center;
+}
+
+.atlas .shapeTertiary {
+  right: 12%;
+  bottom: 10%;
+  width: 26%;
+  height: 38%;
+  border: 1px solid rgba(11, 11, 11, 0.45);
+}
+
+/* Microinteração de hover herdada do card */
+.frame:hover .image {
+  transform: scale(1.04);
+}
+
+.frame:hover .shapePrimary {
+  transform: translateY(-6px);
+}
+
+.frame:hover .shapeTertiary {
+  transform: translateY(6px);
+}
+
+/* As composições diagonais preservam a rotação durante a microinteração. */
+.frame:hover .atlas .shapePrimary {
+  transform: rotate(-12deg) translate(-4px, -6px);
+}
+
+.frame:hover .atlas .shapeSecondary {
+  transform: rotate(-12deg) translate(4px, 4px);
+}
+
+@media (hover: none) {
+  .frame:hover .image,
+  .frame:hover .shapePrimary,
+  .frame:hover .shapeTertiary {
+    transform: none;
+  }
+
+  .frame:hover .atlas .shapePrimary {
+    transform: rotate(-12deg);
+  }
+
+  .frame:hover .atlas .shapeSecondary {
+    transform: rotate(-12deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .frame:hover .image,
+  .frame:hover .shapePrimary,
+  .frame:hover .shapeTertiary {
+    transform: none;
+  }
+
+  .frame:hover .atlas .shapePrimary {
+    transform: rotate(-12deg);
+  }
+
+  .frame:hover .atlas .shapeSecondary {
+    transform: rotate(-12deg);
+  }
+}

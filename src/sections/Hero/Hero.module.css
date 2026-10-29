@@ -1,0 +1,254 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: var(--ci-black);
+  color: var(--ci-white);
+  padding-top: calc(var(--header-h) + clamp(3.5rem, 10vw, 8rem));
+  padding-bottom: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Composição geométrica de fundo (original, monocromática)
+   --------------------------------------------------------------------------- */
+
+.frame {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.frameGrid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.06) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 8.3333% 25%;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 92%);
+}
+
+.frameCircle {
+  position: absolute;
+  top: 6%;
+  right: -18%;
+  width: min(58vw, 620px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+}
+
+.frameSquare {
+  position: absolute;
+  right: clamp(1.25rem, 6vw, 8rem);
+  bottom: -8%;
+  width: min(22vw, 210px);
+  aspect-ratio: 1;
+  background-color: var(--ci-white);
+  opacity: 0.06;
+}
+
+.frameLine {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 62%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ---------------------------------------------------------------------------
+   Conteúdo
+   --------------------------------------------------------------------------- */
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding-bottom: clamp(3rem, 7vw, 5.5rem);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  flex-wrap: wrap;
+  font-size: var(--fs-micro);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.eyebrowMark {
+  width: 7px;
+  height: 7px;
+  background-color: var(--ci-white);
+}
+
+.eyebrowSeparator {
+  width: 18px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.title {
+  max-width: 18ch;
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: var(--fs-display);
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.title em {
+  font-style: normal;
+  position: relative;
+  white-space: nowrap;
+}
+
+.title em::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.08em;
+  height: 0.06em;
+  min-height: 3px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.support {
+  display: grid;
+  gap: clamp(2rem, 4vw, 4rem);
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.lead {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+  max-width: 42ch;
+}
+
+.lead p {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-relaxed);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.actions > * {
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+.pillars {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-self: end;
+}
+
+.pillar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: var(--fs-small);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.pillarMark {
+  width: 5px;
+  height: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Faixa tipográfica em movimento contínuo
+   --------------------------------------------------------------------------- */
+
+.marquee {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  padding-block: clamp(0.875rem, 1.6vw, 1.25rem);
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+
+.marqueeList {
+  display: flex;
+  align-items: center;
+}
+
+.marqueeItem {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  padding-right: clamp(1rem, 2.5vw, 2rem);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+}
+
+.marqueeDot {
+  width: 4px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.4);
+  flex-shrink: 0;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Layout ampliado
+   --------------------------------------------------------------------------- */
+
+@media (min-width: 780px) {
+  .support {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  }
+
+  .actions > * {
+    flex: 0 0 auto;
+  }
+}
+
+@media (min-width: 1100px) {
+  .title {
+    max-width: 20ch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marqueeTrack {
+    animation: none;
+  }
+}

@@ -1,0 +1,145 @@
+.card {
+  display: grid;
+  gap: var(--space-6);
+  align-items: start;
+  container-type: inline-size;
+}
+
+.visualColumn {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  z-index: 2;
+  padding: 0.375rem 0.75rem;
+  background-color: var(--ci-white);
+  color: var(--ci-black);
+  font-size: var(--fs-micro);
+  font-weight: 500;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  border: 1px solid var(--ci-black);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding-top: var(--space-2);
+}
+
+.meta {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--fg-soft);
+}
+
+.index {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.segment {
+  position: relative;
+  padding-left: var(--space-4);
+}
+
+.segment::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 14px;
+  height: 1px;
+  background-color: currentColor;
+}
+
+.name {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  letter-spacing: var(--ls-snug);
+}
+
+.description {
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-soft);
+  max-width: 46ch;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  border-top: var(--border);
+  padding-top: var(--space-4);
+}
+
+.detailRow {
+  display: grid;
+  grid-template-columns: minmax(8rem, 11rem) 1fr;
+  gap: var(--space-4);
+  font-size: var(--fs-small);
+}
+
+.detailRow dt {
+  color: var(--fg-soft);
+  letter-spacing: 0.01em;
+}
+
+.detailRow dd {
+  color: var(--fg);
+}
+
+.action {
+  margin-top: var(--space-2);
+}
+
+.pending {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: var(--fs-small);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--fg-soft);
+}
+
+.pendingMark {
+  width: 6px;
+  height: 6px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+
+/* ---------------------------------------------------------------------------
+   Composição editorial: visual e conteúdo lado a lado quando o próprio card
+   tiver largura suficiente (container query, independe do portfólio).
+   --------------------------------------------------------------------------- */
+
+@container (min-width: 640px) {
+  .card {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 4vw, 4rem);
+  }
+
+  .reversed .visualColumn {
+    order: 2;
+  }
+
+  .reversed .body {
+    order: 1;
+  }
+
+  .wide {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  }
+}

@@ -1,0 +1,4 @@
+# Imagem de compartilhamento (Open Graph)
+#
+# Adicione aqui o arquivo customiq-og.png com 1200x630 px.
+# O caminho já está referenciado em index.html e em src/hooks/useSiteMetadata.ts.

@@ -1,0 +1,7 @@
+# Imagens do portfólio
+#
+# Coloque aqui as imagens reais dos projetos (sugestão de proporção 4:3,
+# ex.: 1600x1200) e informe o caminho em src/data/projects.ts -> projects[].image.
+#
+# Enquanto o campo `image` estiver como null, o card exibe uma composição
+# geométrica monocromática provisória em vez de uma imagem genérica.

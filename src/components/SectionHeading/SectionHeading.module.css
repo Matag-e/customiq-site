@@ -1,0 +1,62 @@
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 46rem;
+}
+
+.center {
+  align-items: center;
+  text-align: center;
+  margin-inline: auto;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: var(--fs-micro);
+  font-weight: 500;
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--fg-soft);
+}
+
+.index {
+  font-variant-numeric: tabular-nums;
+}
+
+.slash {
+  display: block;
+  width: 22px;
+  height: 1px;
+  background-color: currentColor;
+  opacity: 0.6;
+}
+
+.eyebrowText {
+  display: inline-block;
+}
+
+.title {
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  letter-spacing: var(--ls-tight);
+  line-height: var(--lh-snug);
+  max-width: 26ch;
+}
+
+.center .title {
+  max-width: 30ch;
+}
+
+.description {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-soft);
+  max-width: var(--measure);
+}
+
+.description p + p {
+  margin-top: var(--space-3);
+}

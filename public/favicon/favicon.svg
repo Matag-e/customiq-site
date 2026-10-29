@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="CustomIQ">
+  <rect width="64" height="64" fill="#0B0B0B" />
+  <rect x="18" y="18" width="28" height="28" fill="none" stroke="#FFFFFF" stroke-width="2" />
+  <rect x="28" y="28" width="8" height="8" fill="#FFFFFF" />
+</svg>

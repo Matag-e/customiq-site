@@ -1,0 +1,9 @@
+# Logotipo oficial da CustomIQ
+#
+# Coloque aqui o arquivo oficial (ex.: customiq.svg ou customiq.png) e informe
+# o caminho em src/config/site.ts -> site.logo.src.
+#
+# O arquivo é utilizado exatamente como fornecido: sem redesenho do símbolo,
+# alteração de tipografia, efeitos 3D ou mudança de cor.
+#
+# Versões necessárias: preta (fundos claros) e branca (fundos escuros).
