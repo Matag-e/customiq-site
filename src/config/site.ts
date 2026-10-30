@@ -126,12 +126,12 @@ export const contacts: ContactChannels = {
       'Olá! Gostaria de solicitar um orçamento para uma landing page.',
   },
   email: {
-    address: 'mateussantos212@gmail.com',
-    display: 'mateussantos212@gmail.com',
+    address: 'customiqstudio@gmail.com',
+    display: 'customiqstudio@gmail.com',
   },
   instagram: {
-    profileUrl: 'https://instagram.com/seuperfil',
-    handle: '@customiq',
+    profileUrl: 'https://instagram.com/customiqstudio',
+    handle: '@customiqstudio',
   },
 }
 
